@@ -31,6 +31,7 @@ class AlarmTest(unittest.TestCase):
     def test_property_validation(self):
         alarm = TestingAlarm(11)
 
+        assert alarm.psi_pressure_value == 11
         assert alarm._high_pressure_threshold == 21
         assert alarm._low_pressure_threshold == 17
         assert alarm._is_alarm_on ==False
