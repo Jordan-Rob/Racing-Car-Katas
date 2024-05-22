@@ -16,3 +16,6 @@ class TicketDispenser(object):
         newTurnNumber = TurnNumberSequence.next_turn_number()
         newTurnTicket = TurnTicket(newTurnNumber)
         return newTurnTicket
+
+#dispense = TicketDispenser()
+#print(dispense.getTurnTicket().turnNumber)
