@@ -36,6 +36,20 @@ class AlarmTest(unittest.TestCase):
         assert alarm._is_alarm_on ==False
         assert not alarm._sensor == None
 
+    def test_alarm_on_when_pressure_is_below_threshold(self):
+        alarm = TestingAlarm(10)
+        alarm.check()
+        assert alarm.is_alarm_on
+
+    def test_alarm_on_when_pressure_is_above_threshold(self):
+        alarm = TestingAlarm(26)
+        alarm.check()
+        assert alarm.is_alarm_on
+    
+    def test_alarm_off_when_pressure_within_threshold(self):
+        alarm = TestingAlarm(20)
+        alarm.check()
+        assert not alarm._is_alarm_on
 
 # Possible Test cases
     
